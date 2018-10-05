@@ -1,7 +1,7 @@
 const userResolver = require('./user.resolver');
 const queryResolver = require('./query.resolver');
 const characterResolver = require('./character.resolver');
-const abilityScoresResolver = require('./ability-scores.resolver');
+const abilityScoreResolver = require('./ability-score.resolver');
 
 module.exports = {
   createResolvers: function (app) {
@@ -9,7 +9,7 @@ module.exports = {
       userResolver(app),
       queryResolver(app),
       characterResolver(app),
-      abilityScoresResolver(app)
+      abilityScoreResolver(app)
     );
   }
 };
