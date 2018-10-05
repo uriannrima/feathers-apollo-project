@@ -1,13 +1,20 @@
+const findMapper = (app, service, context, method = 'find') => {
+  return app.service(service)[method](context).then(({ data }) => data);
+};
+
 module.exports = function (app) {
   return {
+    User: {
+      characters: ({ _id: userId }) => {
+        return findMapper(app, 'characters', { query: { userId } });
+      }
+    },
     Query: {
-      users: () => {
-        const Users = app.service('users');
-        return Users.find().then(result => result.data);
+      users: (root, args, context) => {
+        return findMapper(app, 'users', context);
       },
-      characters: () => {
-        const Characters = app.service('characters');
-        return Characters.find().then(result => result.data);
+      characters: (root, args, context) => {
+        return findMapper(app, 'characters', context);
       }
     }
   };

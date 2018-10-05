@@ -8,8 +8,8 @@ module.exports = function (app) {
   return new ApolloServer({
     typeDefs,
     resolvers,
-    context: ({ req }) => ({
-      feathers: req.feathers
-    })
+    context: ({ req }) => {
+      return Object.assign({}, req.feathers, { headers: req.headers });
+    }
   });
 };

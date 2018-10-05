@@ -6,6 +6,7 @@ module.exports = gql`
     firstName: String
     lastName: String
     email: String
+    characters: [Character]
   }
 
   type Character {
