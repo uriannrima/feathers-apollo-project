@@ -11,6 +11,9 @@ module.exports = function (app) {
       },
       getAbilityScores: (root, args, context) => {
         return findMapper(app, 'ability-scores', context);
+      },
+      getViewer: (root, args, { user }) => {
+        return user;
       }
     }
   };

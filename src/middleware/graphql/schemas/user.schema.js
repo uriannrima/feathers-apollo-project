@@ -8,4 +8,8 @@ module.exports = gql`
     email: String
     characters: [Character]
   }
+
+  extend type Query {
+    getUsers: [User]
+  }
 `;

@@ -23,4 +23,8 @@ module.exports = gql`
     base: Int
     modifiers: [Int]
   }
+
+  extend type Query {
+    getAbilityScores: [AbilityScore]
+  }
 `;

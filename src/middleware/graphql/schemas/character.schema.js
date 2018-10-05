@@ -7,4 +7,8 @@ module.exports = gql`
     userId: String
     abilityScores: [CharacterAbilityScore]
   }
+  
+  extend type Query {
+    getCharacters: [Character]
+  }
 `;
