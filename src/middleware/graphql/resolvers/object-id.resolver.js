@@ -19,7 +19,7 @@ module.exports = {
       if (typeof _id === 'string') {
         return ObjectID.createFromHexString(_id);
       } else {
-        throw new Error(`${typeof _id} not convertible to ObjectID`)
+        throw new Error(`${typeof _id} not convertible to ObjectID`);
       }
     },
     parseLiteral(ast) {
