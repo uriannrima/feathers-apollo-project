@@ -1,5 +1,5 @@
 // Initializes the `ability-scores` service on path `/ability-scores`
-const createService = require('feathers-nedb');
+const createService = require('feathers-mongoose');
 const createModel = require('../../models/ability-scores.model');
 const hooks = require('./ability-scores.hooks');
 

@@ -1,12 +1,18 @@
-const NeDB = require('nedb');
-const path = require('path');
+// campaigns-model.js - A mongoose model
+// 
+// See http://mongoosejs.com/docs/models.html
+// for more of what you can do here.
+const uniqueArrayPlugin = require('mongoose-unique-array');
 
 module.exports = function (app) {
-  const dbPath = app.get('nedb');
-  const Model = new NeDB({
-    filename: path.join(dbPath, 'campaigns.db'),
-    autoload: true
-  });
+  const mongooseClient = app.get('mongooseClient');
+  const { Schema } = mongooseClient;
 
-  return Model;
+  const campaigns = new Schema({
+    name: { type: String, required: true },
+    characters: [{ type: Schema.Types.ObjectId, ref: 'characters', unique: true }]
+  }, { timestamps: true });
+  campaigns.plugin(uniqueArrayPlugin);
+
+  return mongooseClient.model('campaigns', campaigns);
 };
