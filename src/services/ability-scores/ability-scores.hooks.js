@@ -1,5 +1,4 @@
 const { createCacheHook } = require('../../hooks/cache');
-
 const cacheHook = createCacheHook();
 
 module.exports = {

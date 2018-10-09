@@ -1,8 +1,10 @@
-const { authenticate } = require('@feathersjs/authentication').hooks;
+// const { createCacheHook } = require('../../hooks/cache');
+const { parseMarkdown } = require('../../hooks/markdown');
+// const cacheHook = createCacheHook();
 
 module.exports = {
   before: {
-    all: [ authenticate('jwt') ],
+    all: [],
     find: [],
     get: [],
     create: [],
@@ -12,7 +14,7 @@ module.exports = {
   },
 
   after: {
-    all: [],
+    all: [parseMarkdown('description')],
     find: [],
     get: [],
     create: [],

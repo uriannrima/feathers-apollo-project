@@ -2,6 +2,10 @@
   "host": "localhost",
   "port": 8080,
   "public": "../public/",
+  "cache": {
+    "max": 100,
+    "maxAge": 300000
+  },
   "paginate": {
     "default": 10,
     "max": 50
