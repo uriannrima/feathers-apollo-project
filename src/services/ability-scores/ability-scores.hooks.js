@@ -1,8 +1,10 @@
+const { createCacheHook } = require('../../hooks/cache');
 
+const cacheHook = createCacheHook();
 
 module.exports = {
   before: {
-    all: [],
+    all: [cacheHook],
     find: [],
     get: [],
     create: [],
@@ -12,7 +14,7 @@ module.exports = {
   },
 
   after: {
-    all: [],
+    all: [cacheHook],
     find: [],
     get: [],
     create: [],

@@ -2,10 +2,7 @@
   "host": "localhost",
   "port": 8080,
   "public": "../public/",
-  "paginate": {
-    "default": 10,
-    "max": 50
-  },
+  "paginate": false,
   "authentication": {
     "secret": "1c3225f68cbb5d80762d8819f5c413ba01521d509f66b44e7cfd048dd141c1232fb57db8c5f037cc0269abfc70005fa620eda4340453492d7c28d3decfbc04e58de46aeb0f067906fd4589267712adc088e22b6c91cce10b2057bc3c36b727a3a6cccd356aa7c8ceb47353f92aa66bd672d2af512678ad500896415a4a65718c14c3ea795ca5c843b35e738b24db0f1f1550ecff738e79d23d5ca9b9bd6cf8bbd39e74a59a2655d167ba668c62c35812c79a24db2efbff8fdd65a7205197d0b16f62d0eaa76007e2893fbfb138552830b0dd2aae5fe75104e2ed4f93caa14505d9fbc554f233d671802dc48ae47834b0568cc84841533c417b5054652b3eb6ea",
     "strategies": [
@@ -31,5 +28,5 @@
     }
   },
   "mongodb": "mongodb://DB_USER:DB_PASSWORD@DB_HOST:DB_PORT/DB_NAME",
-  "fallback": "mongodb://localhost/web-dcs"
+  "fallback": "mongodb://localhost/new-web-dcs"
 }
