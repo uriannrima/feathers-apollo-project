@@ -1,5 +1,6 @@
 const { authenticate } = require('@feathersjs/authentication').hooks;
 const { associateCurrentUser, restrictToOwner } = require('feathers-authentication-hooks');
+// const { fastJoin } = require('feathers-hooks-common');
 
 const RELATION = {
   userField: '_id',
@@ -12,6 +13,20 @@ const restrictHook = [
     ownerId: RELATION.characterField
   })
 ];
+
+// const postResolvers = {
+//   joins: {
+//     abilityScores: (...args) => async (character, { app }) => {
+//       const { abilityScores } = character;
+//       const scoreService = app.service('ability-scores');
+//       character.abilityScores = await Promise.all(abilityScores.map(async charScore => {
+//         const { _id } = charScore;
+//         const dbScore = await scoreService.get(_id);
+//         return { ...dbScore, ...charScore };
+//       }));
+//     }
+//   }
+// };
 
 module.exports = {
   before: {

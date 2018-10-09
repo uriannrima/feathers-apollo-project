@@ -8,14 +8,6 @@ module.exports = function () {
 
         return 'AbilityScore';
       },
-    },
-    AbilityScore: ({ _id }, args, context) => {
-      console.log({ _id, args, context });
-      return {};
-    },
-    CharacterAbilityScore: ({ _id }, args, context) => {
-      console.log({ _id, args, context });
-      return {};
     }
   };
 };
